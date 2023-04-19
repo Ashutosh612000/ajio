@@ -1,12 +1,115 @@
+{% extends 'home.html' %}
+
+{% block body %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
 </head>
 <body>
-    <h1>Hello Product</h1>
+
+<h2 style="text-align:center" >Product Table</h2>
+<div>
+<table style="align-itams:center" " width:100%" >
+  <tr style="text-align:center">
+    <th>company_name</th>
+    <th>company_product</th>
+    <th>product_model_name</th>
+    <th>available</th>
+    <th>product_image</th>
+  </tr>
+
+  {% for i in product_data %}
+    
+  <tr>
+    <td>{{i.company_name}}</td>
+    <td>{{i.company_product}}</td>
+    <td>{{i.product_model_name}}</td>
+    <td>{{i.available}}</td>
+    <td> <img src="{{ i.product_image.url}}" width="60"> </td>
+  </tr>
+  {% endfor %}
+
+
+
+</table>
+</div>
+
 </body>
 </html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+</style>
+</head>
+<body>
+
+
+    <h2>Product Table</h2>
+
+    <table style="width:100%" >
+      <tr>
+        <th>company_name</th>
+        <th>company_product</th>
+        <th>product_model_name</th>
+        <th>available</th>
+        <th>product_image</th>
+      </tr>
+    
+      {% for i in product_data %}
+        
+      <tr>
+        <td>{{i.company_name}}</td>
+        <td>{{i.company_product}}</td>
+        <td>{{i.product_model_name}}</td>
+        <td>{{i.available}}</td>
+        <img src="{{ i.product_image }}">
+      </tr>
+      {% endfor %}
+    
+    </table>
+
+</body>
+</html>
+ {% endcomment %}
+
+
+

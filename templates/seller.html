@@ -1,12 +1,78 @@
+
+{% extends 'home.html' %}
+{% block body %} 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+</style>
 </head>
 <body>
-    <h1>Helloo seller</h1>
+  <h2> Buyer Table</h2>
+
+  <div>
+    <table>
+   <tr>
+       <th>Seller_Name</th>
+       <th>item_type</th>
+       <th>Item_photo</th>
+   </tr>
+
+   
+   {% for i in SData %}
+   <tr>
+       <td>{{i.seller_name}}</td>
+       <td>{{i.sller_item_type}}</td>
+       <td><img src="{{i.item_image.url}}" alt="image not found" width="120px"></td>
+   </tr>
+
+   {% endfor %}
+</table>
+</div>    
 </body>
 </html>
+ {% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <table>
+   <tr>
+       <th>Seller_Name</th>
+       <th>item_type</th>
+       <th>Item_photo</th>
+   </tr>
+
+   
+   {% for i in SData %}
+   <tr>
+       <td>{{i.seller_name}}</td>
+       <td>{{i.sller_item_type}}</td>
+       <td><img src="{{i.item_image.url}}" alt="image not found" width="120px"></td>
+   </tr>
+
+   {% endfor %}
+</table>
+</div>

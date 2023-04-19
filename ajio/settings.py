@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'product',
     'seller',
+    'phone_field'
 ]
 
 
