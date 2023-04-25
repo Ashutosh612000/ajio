@@ -34,15 +34,21 @@ li a.active {
 </style>
 </head>
 <body>
-
+          
 <ul>
   <li><a class="active" href={% url 'home' %}>Home</a></li>
   <li><a href={% url 'buyer' %}>Buyer</a></li>
-  <li><a href="{% url 'seller' %}">Seller</a></li>
-  <li><a href="#about">product</a></li>
+  <li><a href={% url 'seller' %}>Seller</a></li>
+  <li><a href={% url 'product' %}>product</a></li>
+  <li><a href={% url 'buyersave' %}>addbuyer</a></li>
+  
+
 </ul>
 
  {% block body %}{% endblock  %} 
+ {% block postdata %}{% endblock postdata %}
+ {% block updatedata %}{% endblock updatedata%}
+
 
 
 </body>

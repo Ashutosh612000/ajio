@@ -21,7 +21,9 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-  <h2> Buyer Table</h2>
+  <h2 style="text-align:center" >Seller Table</h2>
+  <br>
+  <!-- <h2 style="text-align:center" >Product Table</h2> -->
 
   <div>
     <table>
@@ -35,7 +37,7 @@ tr:nth-child(even) {
    {% for i in SData %}
    <tr>
        <td>{{i.seller_name}}</td>
-       <td>{{i.sller_item_type}}</td>
+       <td>{{i.seller_item_type}}</td>
        <td><img src="{{i.item_image.url}}" alt="image not found" width="120px"></td>
    </tr>
 
